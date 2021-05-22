@@ -17,7 +17,7 @@ Local Certificate Setup
 
 1. Install mkcert -> choco install mkcert
 
-2. add RootCA ->
+2. add RootCA -> mkcert -install
 
 3. Create Certificate -> mkcert 127.0.0.1
 
