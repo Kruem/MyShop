@@ -14,7 +14,7 @@ namespace MyShop.Common.Entittes
         [Display(Name = "Image")]
         public string ImageFullPath => ImageId == Guid.Empty
             ? $"https://localhost:44358/images/noimage.png"
-            : $"https://onsale.blob.core.windows.net/products/{ImageId}";
+            : $"https://127.0.0.1:10000/devstoreaccount1/categorias/{ImageId}";
     }
 
 }
