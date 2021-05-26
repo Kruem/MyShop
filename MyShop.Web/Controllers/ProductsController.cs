@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyShop.Common.Entittes;
 using MyShop.Web.Data;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace MyShop.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductsController : Controller
     {
         private readonly DataContext _context;

@@ -1,13 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MyShop.Common.Entittes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MyShop.Web.Data.Entities;
 
 namespace MyShop.Web.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<User>
+
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -24,6 +23,9 @@ namespace MyShop.Web.Data
         public DbSet<Product> Products { get; set; }
 
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
